@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<link rel="stylesheet" href="css/zqx_select.css">
+	<style>
+		html{
+			height:100%;
+		}
+		body{
+			background-color: #000;
+			height: 100%;
+		}
+	</style>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script src="js/zqx_select.js"></script>
+</head>
+<body>
+	<button id="select1" select-value="">请选择</button>
+	<button id="select2" select-value="">请选择</button>
+	<button id="select3" select-value="">请选择</button>
+	<button id="select4" select-value="">请选择</button>
+	<button id="select5" select-value="">请选择</button>
+<script>
+	//下拉框
+	// var optionItems = [
+	// 	{text: "效果1", value: "x-slide"},
+	// 	{text: "效果2", value: "y-slide"},
+	// 	{text: "效果3", value: "x-slide-scale-down"},
+	// 	{text: "效果4", value: "y-slide-scale-down"},
+	// 	{text: "效果5", value: "z-cover-scale-down"},
+	// 	{text: "效果6", value: "z-flip-right"}
+	// ]
+	// var selectObj = zqx_select.init($("#select"), optionItems, function () {
+	// 	effect = $("#select").attr("value");
+	// });
+
+	//下拉框
+	var optionItems = [
+		{text: "效果1", value: "x-slide"},
+		{text: "效果2", value: "y-slide"},
+		{text: "效果3", value: "x-slide-scale-down"},
+		{text: "效果4", value: "y-slide-scale-down"},
+		{text: "效果5", value: "z-cover-scale-down"},
+		{text: "效果6", value: "z-flip-right"}
+	]
+	$("button").zqx_select({
+		options:optionItems,
+		valueChange:function(){
+			
+		}
+	})
+</script>
+</body>
+</html>

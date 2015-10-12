@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>loading</title>
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #BE82FF;
+        }
+
+        .btn-area {
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            /*居中*/
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="css/zqx_select.css"/>
+    <link rel="stylesheet" type="text/css" href="css/zqx_loading.css"/>
+    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="js/zqx_select.js"></script>
+</head>
+<body>
+<div class="btn-area">
+    <button class="btn" id="btn-loading">加载数据</button>
+    <button id="select" select-value="zqx_loading_icon1">请选择loading效果</button>
+</div>
+<script type="text/javascript" src="js/zqx_loading.js"></script>
+<script>
+    $(function () {
+        var optionItems = [
+            {text: "效果1", value: "zqx_loading_icon1"},
+            {text: "效果2", value: "zqx_loading_icon2"},
+        ]
+        $("#select").zqx_select({
+            options: optionItems,
+            valueChange: function () {
+
+            }
+        })
+        $("#btn-loading").click(function () {
+
+            var options = {
+                effect: $("#select").attr("select-value")
+            }
+
+            zqx_loading.loading(options);
+
+
+            setTimeout(function () {
+                zqx_loading.unloading();
+            }, 3000);
+
+        })
+    })
+</script>
+</body>
+</html>

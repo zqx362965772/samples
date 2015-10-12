@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <title>页面滚动</title>
+    <link rel="stylesheet" href="css/zqx_paging.css">
+    <link rel="stylesheet" href="css/zqx_select.css">
+    <link rel="stylesheet" href="css/zqx_base.css">
+    <style>
+
+        .option-div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /*居中*/
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        .titile {
+
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+            font-size: 3rem;
+            color: #fff;
+            letter-spacing: 2px;
+            padding: 3px;
+            text-align: center;
+        }
+    </style>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/zqx_touch.js"></script>
+    <script src="js/zqx_paging.js"></script>
+    <script src="js/zqx_select.js"></script>
+</head>
+<body>
+<div class="pt-page pt-page-1 pt-current-page">
+    <h1 class="titile">滚动页面1</h1>
+</div>
+<div class="pt-page pt-page-2">
+    <h1 class="titile">滚动页面2</h1>
+</div>
+<div class="pt-page pt-page-3">
+    <h1 class="titile">滚动页面3</h1>
+</div>
+<div class="pt-page pt-page-4">
+    <h1 class="titile">滚动页面4</h1>
+</div>
+<div class="pt-page pt-page-5">
+    <h1 class="titile">滚动页面5</h1>
+</div>
+<div class="pt-page pt-page-6">
+    <h1 class="titile">滚动页面6</h1>
+</div>
+<div class="pt-page pt-page-7">
+    <h1 class="titile">滚动页面7</h1>
+</div>
+<div class="option-div" style="">
+    <button class="btn" id="btn_pre">上一页</button>
+    <button class="btn" id="btn_next">下一页</button>
+    <button id="select" select-value="y-slide-scale-down">选择翻页效果</button>
+    <!--<div>-->
+    <!--<button class="btn btn-select-items" value="">效果1</button>-->
+    <!--<button class="btn btn-select-items">效果2</button>-->
+    <!--<button class="btn btn-select-items">效果3</button>-->
+    <!--<button class="btn btn-select-items">效果4</button>-->
+    <!--</div>-->
+</div>
+<!--<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>-->
+
+<script>
+    $(function () {
+
+        var elements = $(".pt-page");
+        var effect = $("#select").attr("select-value");
+        var pageObj = zqx_paging.init(elements, effect);
+
+        zqx_touch.addTouchYBackEvent(function(){
+            pageObj.triggerBack();
+        });
+        zqx_touch.addTouchYForwardEvent(function(){
+            pageObj.triggerForward();
+        });
+
+
+        $("#btn_next").click(function () {
+            pageObj.triggerForward();
+        });
+        $("#btn_pre").click(function () {
+            pageObj.triggerBack();
+        });
+
+
+        var optionItems = [
+            {text: "效果1", value: "x-slide"},
+            {text: "效果2", value: "y-slide"},
+            {text: "效果3", value: "x-slide-scale-down"},
+            {text: "效果4", value: "y-slide-scale-down"},
+            {text: "效果5", value: "z-cover-scale-down"},
+            {text: "效果6", value: "z-flip-right"}
+        ]
+        $("#select").zqx_select({
+            options: optionItems,
+            valueChange: function () {
+                effect = $("#select").attr("select-value");
+                pageObj = zqx_paging.init(elements, effect);
+            }
+        })
+    });
+</script>
+</body>
+</html>

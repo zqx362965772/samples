@@ -1,0 +1,388 @@
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 100%;
+    background-color: #000000;
+}
+
+.pt-page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.pt-current-page {
+    visibility: visible;
+}
+
+.pt-page-1 {
+    background-color: #0ac2d2;
+}
+
+.pt-page-2 {
+    background-color: #fd6a62;
+}
+
+.pt-page-3 {
+    background-color: #fdc162;
+}
+
+.pt-page-4 {
+    background-color: #f68dbb;
+}
+
+.pt-page-5 {
+    background-color: #7bb7fa;
+}
+
+.pt-page-6 {
+    background-color: #60d7a9;
+}
+
+.pt-page-7 {
+    background-color: #BE82FF;
+}
+
+/*-------------动画--------------*/
+
+/*左滑动*/
+.zqx-page-moveToLeft {
+    -webkit-animation: moveToLeft .6s ease both;
+    -moz-animation: moveToLeft .6s ease both;
+    animation: moveToLeft .6s ease both;
+}
+
+.zqx-page-moveFromRight {
+    -webkit-animation: moveFromRight .6s ease both;
+    -moz-animation: moveFromRight .6s ease both;
+    animation: moveFromRight .6s ease both;
+}
+
+@-webkit-keyframes moveToLeft {
+    to {
+        -webkit-transform: translateX(-100%);
+    }
+}
+
+@-moz-keyframes moveToLeft {
+    to {
+        -moz-transform: translateX(-100%);
+    }
+}
+
+@keyframes moveToLeft {
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@-webkit-keyframes moveFromRight {
+    from {
+        -webkit-transform: translateX(100%);
+    }
+}
+
+@-moz-keyframes moveFromRight {
+    from {
+        -moz-transform: translateX(100%);
+    }
+}
+
+@keyframes moveFromRight {
+    from {
+        transform: translateX(100%);
+    }
+}
+
+/*右滑动*/
+.zqx-page-moveToRight {
+    -webkit-animation: moveToRight .6s ease both;
+    -moz-animation: moveToRight .6s ease both;
+    animation: moveToRight .6s ease both;
+}
+
+.zqx-page-moveFromLeft {
+    -webkit-animation: moveFromLeft .6s ease both;
+    -moz-animation: moveFromLeft .6s ease both;
+    animation: moveFromLeft .6s ease both;
+}
+
+/*上滑动*/
+.zqx-page-moveToTop {
+    -webkit-animation: moveToTop .6s ease both;
+    -moz-animation: moveToTop .6s ease both;
+    animation: moveToTop .6s ease both;
+}
+
+.zqx-page-moveFromBottom {
+    -webkit-animation: moveFromBottom .6s ease both;
+    -moz-animation: moveFromBottom .6s ease both;
+    animation: moveFromBottom .6s ease both;
+}
+
+/*下滑动*/
+.zqx-page-moveToBottom {
+    -webkit-animation: moveToBottom .6s ease both;
+    -moz-animation: moveToBottom .6s ease both;
+    animation: moveToBottom .6s ease both;
+}
+
+.zqx-page-moveFromTop {
+    -webkit-animation: moveFromTop .6s ease both;
+    -moz-animation: moveFromTop .6s ease both;
+    animation: moveFromTop .6s ease both;
+}
+
+/*in左滑动 out缩小*/
+/*延迟时间0.7s要比滑动时间0.6s短 */
+.zqx-page-scaleDown {
+    -webkit-animation: scaleDown .7s ease both;
+    -moz-animation: scaleDown .7s ease both;
+    animation: scaleDown .7s ease both;
+}
+
+.zqx-page-scaleUp {
+    -webkit-animation: scaleUp .7s ease both;
+    -moz-animation: scaleUp .7s ease both;
+    animation: scaleUp .7s ease both;
+}
+
+.zqx-page-scaleUpDown {
+    -webkit-animation: scaleUpDown .7s ease both;
+    -moz-animation: scaleUpDown .7s ease both;
+    animation: scaleUpDown .7s ease both;
+}
+.zqx-page-scaleUpUp{
+    -webkit-animation: scaleUpUp .7s ease both;
+    -moz-animation: scaleUpUp .7s ease both;
+    animation: scaleUpUp .7s ease both;
+}
+.zqx-page-delay300 {
+    -webkit-animation-delay: .3s;
+    -moz-animation-delay: .3s;
+    animation-delay: .3s;
+}
+.zqx-page-flipOutRight {
+    -webkit-transform-origin: 50% 50%;
+    -webkit-animation: flipOutRight .5s both ease-in;
+    -moz-transform-origin: 50% 50%;
+    -moz-animation: flipOutRight .5s both ease-in;
+    transform-origin: 50% 50%;
+    animation: flipOutRight .5s both ease-in;
+}
+.zqx-page-flipInLeft{
+    -webkit-transform-origin: 50% 50%;
+    -webkit-animation: flipInLeft .5s both ease-out;
+    -moz-transform-origin: 50% 50%;
+    -moz-animation: flipInLeft .5s both ease-out;
+    transform-origin: 50% 50%;
+    animation: flipInLeft .5s both ease-out;
+}
+@-webkit-keyframes flipInLeft {
+    from { -webkit-transform: translateZ(-1000px) rotateY(-90deg); opacity: 0.2; }
+}
+@-moz-keyframes flipInLeft {
+    from { -moz-transform: translateZ(-1000px) rotateY(-90deg); opacity: 0.2; }
+}
+@keyframes flipInLeft {
+    from { transform: translateZ(-1000px) rotateY(-90deg); opacity: 0.2; }
+}
+@-webkit-keyframes flipOutRight {
+    to { -webkit-transform: translateZ(-1000px) rotateY(90deg); opacity: 0.2; }
+}
+@-moz-keyframes flipOutRight {
+    to { -moz-transform: translateZ(-1000px) rotateY(90deg); opacity: 0.2; }
+}
+@keyframes flipOutRight {
+    to { transform: translateZ(-1000px) rotateY(90deg); opacity: 0.2; }
+}
+@-webkit-keyframes scaleUpUp {
+    from {
+        opacity: 0;
+        -webkit-transform: scale(.8)
+    }
+}
+@-moz-keyframes scaleUpUp {
+    from {
+        opacity: 0;
+        -moz-transform: scale(.8)
+    }
+}
+@keyframes scaleUpUp {
+    from {
+        opacity: 0;
+        transform: scale(.8)
+    }
+}
+@-webkit-keyframes scaleUpDown {
+    to {
+        opacity: 0;
+        -webkit-transform: scale(1.2)
+    }
+}
+@-moz-keyframes scaleUpDown {
+    to {
+        opacity: 0;
+        -moz-transform: scale(1.2)
+    }
+}
+@keyframes scaleUpDown {
+    to {
+        opacity: 0;
+        transform: scale(1.2)
+    }
+}
+
+@-webkit-keyframes scaleUp {
+    from {
+        opacity: 0;
+        -webkit-transform: scale(1.2);
+    }
+}
+
+@-moz-keyframes scaleUp {
+    from {
+        opacity: 0;
+        -moz-transform: scale(1.2);
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+}
+
+@-webkit-keyframes scaleDown {
+    to {
+        opacity: 0;
+        -webkit-transform: scale(.8);
+    }
+}
+
+@-moz-keyframes scaleDown {
+    to {
+        opacity: 0;
+        -moz-transform: scale(.8);
+    }
+}
+
+@keyframes scaleDown {
+    to {
+        opacity: 0;
+        transform: scale(.8);
+    }
+}
+
+@-webkit-keyframes moveToBottom {
+    to {
+        -webkit-transform: translateY(100%);
+    }
+}
+
+@-moz-keyframes moveToBottom {
+    to {
+        -moz-transform: translateY(100%);
+    }
+}
+
+@keyframes moveToBottom {
+    to {
+        transform: translateY(100%);
+    }
+}
+
+@-webkit-keyframes moveFromTop {
+    from {
+        -webkit-transform: translateY(-100%);
+    }
+}
+
+@-moz-keyframes moveFromTop {
+    from {
+        -moz-transform: translateY(-100%);
+    }
+}
+
+@keyframes moveFromTop {
+    from {
+        transform: translateY(-100%);
+    }
+}
+
+@-webkit-keyframes moveToTop {
+    to {
+        -webkit-transform: translateY(-100%);
+    }
+}
+
+@-moz-keyframes moveToTop {
+    to {
+        -moz-transform: translateY(-100%);
+    }
+}
+
+@keyframes moveToTop {
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+@-webkit-keyframes moveFromBottom {
+    from {
+        -webkit-transform: translateY(100%);
+    }
+}
+
+@-moz-keyframes moveFromBottom {
+    from {
+        -moz-transform: translateY(100%);
+    }
+}
+
+@keyframes moveFromBottom {
+    from {
+        transform: translateY(100%);
+    }
+}
+
+@-webkit-keyframes moveToRight {
+    to {
+        -webkit-transform: translateX(100%);
+    }
+}
+
+@-moz-keyframes moveToRight {
+    to {
+        -moz-transform: translateX(100%);
+    }
+}
+
+@keyframes moveToRight {
+    to {
+        transform: translateX(100%);
+    }
+}
+
+@-webkit-keyframes moveFromLeft {
+    from {
+        -webkit-transform: translateX(-100%);
+    }
+}
+
+@-moz-keyframes moveFromLeft {
+    from {
+        -moz-transform: translateX(-100%);
+    }
+}
+
+@keyframes moveFromLeft {
+    from {
+        transform: translateX(-100%);
+    }
+}
